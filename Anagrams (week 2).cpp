@@ -63,6 +63,25 @@ TEST(BuildCharCounters, testFailureTrue){
     }
 }
 
+TEST(BuildCharCounters, testForMethod){
+    {
+        // Arrange
+        BuildingCharCounters buildingCharCounters;
+        string word_1 = "tomato";
+        map<char, int> m = {
+                {'t', 2},
+                {'o', 2},
+                {'m', 1},
+                {'a', 1},
+        };
+        // Act
+        auto w1= buildingCharCounters.BuildCharCounters(word_1);
+        // Assert
+        ASSERT_EQ(m, w1); // should be - true
+
+    }
+}
+
 int main(int argc, char* argv[]) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
@@ -87,7 +106,7 @@ int main() {
 }*/
 
 
-// how to test a private methods
+// --------------------- how to test a private methods ---------------------
 
 /*friend class FriendTest;
 
@@ -108,3 +127,4 @@ class FriendTest
         auto b = buildingCharCounters.BuildCharCounters("134132");
     }
 };*/
+// --------------------- --------------------- ---------------------

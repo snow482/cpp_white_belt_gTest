@@ -1,10 +1,8 @@
 #include <iostream>
-#include <map>
 #include <vector>
 #include <utility>
 #include <algorithm>
 
-using std::map;
 using std::string;
 using std::cin;
 using std::cout;

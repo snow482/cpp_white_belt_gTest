@@ -30,7 +30,7 @@ void PrintReversedMap(const map<string, int>& m) { // printing map<string, int>
 int main() {
 
     map<int, string> dates;
-    dates[1994] = "Sonya's birth date";
+    dates[1994] = "My lovely wife birth date";
     dates[1992] = "My birth date";
     dates[2020] = "fucking Corona";
     PrintMap(dates);

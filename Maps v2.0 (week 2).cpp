@@ -17,7 +17,9 @@ void PrintMap(const map<string, int>& m){
 
 int main() {
 
-    map<string, int> spellsNums = {{"alohomora", 1}, {"accio", 2}, {"avada kedavra", 3}};
+    map<string, int> spellsNums = {{"alohomora", 1},
+                                   {"accio", 2},
+                                   {"avada kedavra", 3}};
     PrintMap(spellsNums);
 
     return 0;

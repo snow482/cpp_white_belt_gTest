@@ -2,6 +2,7 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <gtest/gtest.h>
 
 using std::map;
 using std::vector;
@@ -68,6 +69,7 @@ public:
                current_last_name.second + PreviousDataPrinter(last_name_vec);
     }
 
+    friend class FriendClass;
 private:
     map<int, string> m_firstName;
     map<int, string> m_lastName;
@@ -134,8 +136,33 @@ private:
         }
     }
 };
+TEST(Person, ChangeFirstNameTest){
+    {
+        /*// Arrange
+        SortedStrings sortedStrings;
+        TestFriend testFriend;
+        string testString1 = "first_tomato";
+        string testString2 = "third_tomato";
+        string testString3 = "second_tomato";
+        vector<string> testFullVec = {"first_tomato", "second_tomato", "third_tomato"};
 
-int main() {
+        sortedStrings.AddString(testString1);
+        sortedStrings.AddString(testString2);
+        sortedStrings.AddString(testString3);
+        sortedStrings.GetSortedStrings();
+        // Act
+        auto vector = testFriend.GetVector(sortedStrings);
+        // Assert
+        ASSERT_EQ(vector, testFullVec);*/
+    }
+}
+
+int main(int argc, char* argv[]) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+
+/*int main() {
+
     Person person;
 
     person.ChangeFirstName(1965, "Polina");
@@ -169,6 +196,6 @@ int main() {
     person.ChangeLastName(1961, "Ivanova");
     cout << person.GetFullNameWithHistory(1967) << endl;
 
-    return 0;
+    return 0;*/
 }
 
