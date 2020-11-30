@@ -12,8 +12,10 @@ add_executable(cpp_white_belt_gTest "Anagrams (week 2).cpp")
 
 #[[ADD_SUBDIRECTORY(ext/gtestbuilded/gtest)]]
 
-target_include_directories( "${PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/../ext/gtestbuilded/gtest/inc" )
-target_link_libraries( "${PROJECT_NAME}" debug ${CMAKE_CURRENT_SOURCE_DIR}/../ext/gtestbuilded/gtest/lib/x64/windows/Debug/gtestd.lib)
-target_link_libraries( "${PROJECT_NAME}" optimized ${CMAKE_CURRENT_SOURCE_DIR}/../ext/gtestbuilded/gtest/lib/x64/windows/Release/gtest.lib)
-target_link_libraries( "${PROJECT_NAME}" debug ${CMAKE_CURRENT_SOURCE_DIR}/../ext/gtestbuilded/gtest/lib/x64/windows/Debug/gmockd.lib)
-target_link_libraries( "${PROJECT_NAME}" optimized ${CMAKE_CURRENT_SOURCE_DIR}/../ext/gtestbuilded/gtest/lib/x64/windows/Release/gmock.lib)
+target_include_directories( "${PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/gtestbuilded/gtest/inc" )
+target_link_libraries( "${PROJECT_NAME}" debug ${CMAKE_CURRENT_SOURCE_DIR}/gtestbuilded/gtest/lib/x64/windows/Debug/gtestd.lib)
+target_link_libraries( "${PROJECT_NAME}" optimized ${CMAKE_CURRENT_SOURCE_DIR}/gtestbuilded/gtest/lib/x64/windows/Release/gtest.lib)
+target_link_libraries( "${PROJECT_NAME}" debug ${CMAKE_CURRENT_SOURCE_DIR}/gtestbuilded/gtest/lib/x64/windows/Debug/gmockd.lib)
+target_link_libraries( "${PROJECT_NAME}" optimized ${CMAKE_CURRENT_SOURCE_DIR}/gtestbuilded/gtest/lib/x64/windows/Release/gmock.lib)
+add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+set_property(TARGET "${PROJECT_NAME}" PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
