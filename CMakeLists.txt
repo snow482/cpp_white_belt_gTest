@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
 
-add_executable(cpp_white_belt_gTest "Sorted strings (classes, week 3)")
+add_executable(cpp_white_belt_gTest "tests.cpp")
 
 #[[ADD_SUBDIRECTORY(ext/gtestbuilded/gtest)]]
 

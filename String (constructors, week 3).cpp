@@ -1,4 +1,4 @@
-#include <cassert>
+#include <gtest/gtest.h>
 #include <algorithm>
 #include <iostream>
 #include <string>
@@ -6,12 +6,12 @@
 #include <vector>
 #include <set>
 
+
 using std::reverse;
 using std::map;
 using std::vector;
 using std::set;
 using std::string;
-using std::pair;
 using std::cin;
 using std::cout;
 using std::endl;
@@ -23,42 +23,50 @@ public:
     ReversibleString(const string& s){
         str = s;
     }
-
     void Reverse(){
-        string s;
-        for(std::string::reverse_iterator rit = str.rbegin(); rit != str.rend(); ++rit){
-
-
-        }
-
-
-    }
-    /*void Reverse(){
         reverse(begin(str), end(str));
-    }*/
-    string ToString() const {
-        return str;
-
     }
-
+    string ToString() const{
+        return str;
+    }
 private:
     string str;
 };
 
-int main(){
+TEST(ReversibleString, reverseTest){
+    // Arrange
+    string rightReversedString = "evil";
+    string stringForReverse = "live";
+    ReversibleString reversibleString (stringForReverse); // add string for reverse to constructor;
+    // Act
+    reversibleString.Reverse();
+    string s = reversibleString.ToString();
+    // Assert
+    ASSERT_EQ(rightReversedString, s);
+}
+
+int main(int argc, char* argv[]) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+
+/*int main(){
 
     ReversibleString s("live");
     s.Reverse();
     cout << s.ToString() << endl;
 
-    /*s.Reverse();
+s.Reverse();
     const ReversibleString& s_ref = s;
     string tmp = s_ref.ToString();
     cout << tmp << endl;
 
     ReversibleString empty;
-    cout << '"' << empty.ToString() << '"' << endl;*/
+    cout << '"' << empty.ToString() << '"' << endl;
 
 
-    return 0;
+
+    return 0;*/
 }
+
+
+
